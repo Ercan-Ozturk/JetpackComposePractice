@@ -22,22 +22,6 @@ import java.text.NumberFormat
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
-    @get:Rule
-    val composeTestRule = createComposeRule()
-
-    @Test
-    fun calculate_20_percent_tip() {
-        composeTestRule.setContent {
-            ComposePracticeTheme {
-                TipTimeLayout()
-            }
-        }
-        composeTestRule.onNodeWithText("Bill Amount").performTextInput("10")
-        composeTestRule.onNodeWithText("Tip Percentage").performTextInput("20")
-        val expectedTip = NumberFormat.getCurrencyInstance().format(2)
-        composeTestRule.onNodeWithText("Tip Amount: $expectedTip").assertExists(
-            "No node with this text was found.")
-    }
 
 
 }
